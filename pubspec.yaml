@@ -1,6 +1,6 @@
 name: nsr_calculator
 description: A sharable package for calculator.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/momin96/nsr_calculator
 
 environment:
