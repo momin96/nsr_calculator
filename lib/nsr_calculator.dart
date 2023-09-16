@@ -1,8 +1,12 @@
+// ignore_for_file: library_private_types_in_public_api
+
 library nsr_calculator;
 
 import 'package:flutter/material.dart';
 
 class Calculator extends StatefulWidget {
+  const Calculator({super.key});
+
   @override
   _CalculatorState createState() => _CalculatorState();
 }
@@ -109,8 +113,8 @@ class _CalculatorState extends State<Calculator> {
           currentNumber = currentNumber.substring(1);
           result = result.substring(1);
         } else {
-          currentNumber = '-' + currentNumber;
-          result = '-' + result;
+          currentNumber = '-$currentNumber';
+          result = '-$result';
         }
       });
     }
@@ -133,16 +137,16 @@ class _CalculatorState extends State<Calculator> {
 
   Widget _buildButton(String buttonText, {Color color = Colors.white}) {
     return Container(
-      margin: EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
       child: ElevatedButton(
         onPressed: () {
           _onButtonPressed(buttonText);
         },
         style: ElevatedButton.styleFrom(
-          primary: color,
-          onPrimary: Colors.black,
-          padding: EdgeInsets.all(20),
-          textStyle: TextStyle(fontSize: 20),
+          backgroundColor: color,
+          foregroundColor: Colors.black,
+          padding: const EdgeInsets.all(20),
+          textStyle: const TextStyle(fontSize: 20),
         ),
         child: Text(buttonText),
       ),
@@ -152,17 +156,14 @@ class _CalculatorState extends State<Calculator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //     //title: Text('Calculator'),
-      //     ),
       body: Column(
         children: <Widget>[
           Container(
             alignment: Alignment.centerRight,
-            padding: EdgeInsets.symmetric(vertical: 24, horizontal: 12),
+            padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 12),
             child: Text(
               result,
-              style: TextStyle(fontSize: 48),
+              style: const TextStyle(fontSize: 48),
             ),
           ),
           Row(
