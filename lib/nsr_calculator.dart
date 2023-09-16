@@ -143,8 +143,8 @@ class _CalculatorState extends State<Calculator> {
           _onButtonPressed(buttonText);
         },
         style: ElevatedButton.styleFrom(
-          primary: color,
-          onPrimary: Colors.black,
+          backgroundColor: color,
+          foregroundColor: Colors.black,
           padding: const EdgeInsets.all(20),
           textStyle: const TextStyle(fontSize: 20),
         ),
