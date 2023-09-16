@@ -20,12 +20,32 @@ A sharable calculator package
 ## Getting started
 
 No prerequisites to use this package
+Just import the package `import 'package:nsr_calculator/nsr_calculator.dart';` and start using it 
+
+You can find the source code of package at https://github.com/momin96/nsr_calculator
 
 ## Usage
 
 Just a sample, yet to update how to use it
 ```dart
-const like = 'sample';
+import 'package:nsr_calculator/nsr_calculator.dart';
+
+void main() {
+  runApp(MainApp());
+}
+
+class MainApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(),
+        body: Calculator(),
+      ),
+    );
+  }
+}
 ```
 
 ## Additional information
